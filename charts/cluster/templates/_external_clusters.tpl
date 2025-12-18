@@ -1,6 +1,7 @@
 {{- define "cluster.externalClusters" -}}
 externalClusters:
 {{- if eq .Values.mode "standalone" }}
+  null
 {{- else if eq .Values.mode "recovery" }}
   {{- if eq .Values.recovery.method "pg_basebackup" }}
   - name: pgBaseBackupSource
